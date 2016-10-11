@@ -6,7 +6,13 @@
 
     <groupId>com.andyadc</groupId>
     <artifactId>zookeeper-study</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <url>https://github.com/andyadc/zookeeper-study</url>
+
+    <modules>
+        <module>zookeeper-study-lock</module>
+    </modules>
 
 
 </project>
