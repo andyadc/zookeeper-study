@@ -5,6 +5,8 @@ import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.retry.ExponentialBackoffRetry;
 import org.apache.curator.test.TestingServer;
 import org.apache.curator.utils.CloseableUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
@@ -15,6 +17,8 @@ import java.util.concurrent.TimeUnit;
  * @author andaicheng
  */
 public class InterProcessMutexExample {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(InterProcessMutexExample.class);
 
     private static final int QTY = 5;
     private static final int REPETITIONS = QTY * 10;
@@ -38,6 +42,7 @@ public class InterProcessMutexExample {
                                 locks.doWork(10, TimeUnit.SECONDS);
                             }
                         } catch (Throwable e) {
+                            LOGGER.error("", e);
                             e.printStackTrace();
                         } finally {
                             CloseableUtils.closeQuietly(client);
