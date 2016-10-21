@@ -1,4 +1,4 @@
-package com.andyadc.zookeeper.study.lock;
+package com.andyadc.zookeeper.study.lock.curator;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 

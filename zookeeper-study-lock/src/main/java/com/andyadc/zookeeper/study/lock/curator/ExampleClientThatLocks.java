@@ -1,4 +1,4 @@
-package com.andyadc.zookeeper.study.lock;
+package com.andyadc.zookeeper.study.lock.curator;
 
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.recipes.locks.InterProcessLock;
