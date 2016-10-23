@@ -33,6 +33,9 @@ public class HelloZookeeper {
 
 }
 
+/**
+ *  监听器
+ */
 class DemoWatcher implements Watcher {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(DemoWatcher.class);
