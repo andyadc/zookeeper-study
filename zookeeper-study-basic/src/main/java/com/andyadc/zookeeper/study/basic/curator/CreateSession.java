@@ -17,9 +17,11 @@ public class CreateSession {
     public static void main(String[] args) throws Exception {
         RetryPolicy retryPolicy = new ExponentialBackoffRetry(1000, 3);
         CuratorFramework framework = CuratorFrameworkFactory.newClient(IP + ":2191", 5000, 5000, retryPolicy);
-        framework.create().creatingParentsIfNeeded().withMode(CreateMode.EPHEMERAL).forPath("/curator/c1", "123".getBytes());
+        framework.start();
+        String result = framework.create().creatingParentsIfNeeded().withMode(CreateMode.EPHEMERAL).forPath("/curator/c1", "123".getBytes());
 
-        framework.delete().deletingChildrenIfNeeded().forPath("/curator");
+        System.out.println(result);
+        //framework.delete().deletingChildrenIfNeeded().forPath("/curator");
         framework.close();
     }
 }
