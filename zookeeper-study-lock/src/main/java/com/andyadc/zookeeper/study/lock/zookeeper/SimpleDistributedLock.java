@@ -72,7 +72,7 @@ public class SimpleDistributedLock implements Watcher {
             threadSemaphore.await();
             LOGGER.info("所有线程运行结束!");
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("线程运行异常");
         }
     }
 
