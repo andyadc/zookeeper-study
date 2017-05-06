@@ -8,12 +8,14 @@ import org.I0Itec.zkclient.serialize.BytesPushThroughSerializer;
  */
 public class TestDistributedLock {
 
-    public static void main(String[] args) {
-        final ZkClientExt zkClientExt1 = new ZkClientExt("139.196.192.166:2191", 5000, 5000, new BytesPushThroughSerializer());
-        final SimpleDistributedLockMutex mutex1 = new SimpleDistributedLockMutex(zkClientExt1, "/mutex");
+    private static final String ZK_SERVER_ADDRESS = "139.196.192.166:2191,139.196.192.166:2192,139.196.192.166:2193";
 
-        final ZkClientExt zkClientExt2 = new ZkClientExt("139.196.192.166:2191", 5000, 5000, new BytesPushThroughSerializer());
-        final SimpleDistributedLockMutex mutex2 = new SimpleDistributedLockMutex(zkClientExt2, "/mutex");
+    public static void main(String[] args) {
+        final ZkClientExt zkClientExt1 = new ZkClientExt(ZK_SERVER_ADDRESS, 5000, 5000, new BytesPushThroughSerializer());
+        final DistributedLock mutex1 = new SimpleDistributedLockMutex(zkClientExt1, "/mutex");
+
+        final ZkClientExt zkClientExt2 = new ZkClientExt(ZK_SERVER_ADDRESS, 5000, 5000, new BytesPushThroughSerializer());
+        final DistributedLock mutex2 = new SimpleDistributedLockMutex(zkClientExt2, "/mutex");
 
         try {
             mutex1.acquire();
@@ -38,7 +40,7 @@ public class TestDistributedLock {
             System.out.println("Client1 released lock");
 
             client2Thd.join();
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

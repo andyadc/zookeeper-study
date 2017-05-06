@@ -14,7 +14,6 @@
     <properties>
         <zookeeper.version>3.4.9</zookeeper.version>
         <curator.version>2.11.0</curator.version>
-        <zkclient.version>0.1</zkclient.version>
     </properties>
 
     <dependencies>
@@ -41,19 +40,11 @@
             <version>${curator.version}</version>
         </dependency>
 
-        <!-- zkclient -->
-        <!--<dependency>
-            <groupId>com.github.sgroschupf</groupId>
-            <artifactId>zkclient</artifactId>
-            <version>${zkclient.version}</version>
-        </dependency>-->
-
         <dependency>
             <groupId>com.101tec</groupId>
             <artifactId>zkclient</artifactId>
-            <version>0.9</version>
+            <version>0.10</version>
         </dependency>
-
     </dependencies>
 
     <build>

@@ -8,12 +8,12 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>zookeeper-study-basic</artifactId>
     <packaging>war</packaging>
-    <name>zookeeper-study-basic Maven Webapp</name>
+    <name>zookeeper-study-basic</name>
     <url>https://github.com/andyadc/zookeeper-study</url>
 
     <properties>
         <zookeeper.version>3.4.9</zookeeper.version>
-        <zkclient.version>0.1</zkclient.version>
+        <zkclient.version>0.10</zkclient.version>
         <curator.version>2.11.0</curator.version>
     </properties>
 
@@ -24,16 +24,10 @@
             <version>${zookeeper.version}</version>
         </dependency>
 
-        <!-- zkclient -->
-        <!--<dependency>
-            <groupId>com.github.sgroschupf</groupId>
-            <artifactId>zkclient</artifactId>
-            <version>${zkclient.version}</version>
-        </dependency>-->
         <dependency>
             <groupId>com.101tec</groupId>
             <artifactId>zkclient</artifactId>
-            <version>0.9</version>
+            <version>${zkclient.version}</version>
         </dependency>
 
         <!-- curator -->
