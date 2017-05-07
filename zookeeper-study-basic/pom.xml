@@ -14,7 +14,7 @@
     <properties>
         <zookeeper.version>3.4.9</zookeeper.version>
         <zkclient.version>0.10</zkclient.version>
-        <curator.version>2.11.0</curator.version>
+        <curator.version>2.12.0</curator.version>
     </properties>
 
     <dependencies>
