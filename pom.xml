@@ -13,6 +13,7 @@
     <modules>
         <module>zookeeper-study-lock</module>
         <module>zookeeper-study-basic</module>
+        <module>menagerie</module>
     </modules>
 
     <properties>
